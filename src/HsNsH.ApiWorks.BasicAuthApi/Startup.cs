@@ -1,3 +1,6 @@
+using HsNsH.ApiWorks.BasicAuthApi.Handlers;
+using Microsoft.AspNetCore.Authentication;
+
 namespace HsNsH.ApiWorks.BasicAuthApi;
 
 public class Startup
@@ -12,6 +15,9 @@ public class Startup
     public void ConfigureServices(IServiceCollection services)
     {
         services.AddControllers().AddJsonOptions(options => options.JsonSerializerOptions.WriteIndented = true);
+
+        services.AddAuthentication("BasicAuthentication")
+            .AddScheme<AuthenticationSchemeOptions, BasicAuthenticationHandler>("BasicAuthentication", null);
 
         services.AddEndpointsApiExplorer();
         services.AddSwaggerGen();
@@ -30,6 +36,7 @@ public class Startup
 
         app.UseRouting();
 
+        app.UseAuthentication();
         app.UseAuthorization();
 
         app.UseEndpoints(endpoints =>

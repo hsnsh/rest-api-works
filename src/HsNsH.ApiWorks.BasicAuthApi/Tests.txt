@@ -1,0 +1,6 @@
+
+Postman Basic
+username : HsNsH@outlook.com
+password : 1q2w3E*
+
+Authorization => Basic SHNOc0hAb3V0bG9vay5jb206MXEydzNFKg==
