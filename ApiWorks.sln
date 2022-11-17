@@ -6,6 +6,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{805929C6-1
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HsNsH.ApiWorks.BasicAuthApi", "src\HsNsH.ApiWorks.BasicAuthApi\HsNsH.ApiWorks.BasicAuthApi.csproj", "{F314870F-F16B-4946-90F3-B1F982DFACD1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HsNsH.ApiWorks.JsonTokenAuthApi", "src\HsNsH.ApiWorks.JsonTokenAuthApi\HsNsH.ApiWorks.JsonTokenAuthApi.csproj", "{8688F610-647E-4240-875A-F56E1CF1E0E4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,11 +15,16 @@ Global
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{F314870F-F16B-4946-90F3-B1F982DFACD1} = {F37CB1DF-D1E8-4892-9555-7BB03D14EDE9}
+		{8688F610-647E-4240-875A-F56E1CF1E0E4} = {F37CB1DF-D1E8-4892-9555-7BB03D14EDE9}
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{F314870F-F16B-4946-90F3-B1F982DFACD1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{F314870F-F16B-4946-90F3-B1F982DFACD1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F314870F-F16B-4946-90F3-B1F982DFACD1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F314870F-F16B-4946-90F3-B1F982DFACD1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8688F610-647E-4240-875A-F56E1CF1E0E4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8688F610-647E-4240-875A-F56E1CF1E0E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8688F610-647E-4240-875A-F56E1CF1E0E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8688F610-647E-4240-875A-F56E1CF1E0E4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
