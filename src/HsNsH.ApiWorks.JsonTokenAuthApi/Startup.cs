@@ -1,4 +1,7 @@
+using System.Text;
 using HsNsH.ApiWorks.JsonTokenAuthApi.Models;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
 
 namespace HsNsH.ApiWorks.JsonTokenAuthApi;
 
@@ -15,8 +18,24 @@ public class Startup
     {
         services.AddControllers().AddJsonOptions(options => options.JsonSerializerOptions.WriteIndented = true);
 
-        var jwtSettings = Configuration.GetSection("JWTSettings");
-        services.Configure<JWTSettings>(jwtSettings);
+        var jwtSection = Configuration.GetSection("JWTSettings");
+        services.Configure<JWTSettings>(jwtSection);
+
+        // To validate the token which has been sent by clients
+        var jwtSettings = jwtSection.Get<JWTSettings>();
+        var key = Encoding.ASCII.GetBytes(jwtSettings.SecretKey);
+
+        services.AddAuthentication(x =>
+            {
+                x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                x.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+            })
+            .AddJwtBearer(x =>
+            {
+                x.RequireHttpsMetadata = true;
+                x.SaveToken = true;
+                x.TokenValidationParameters = new TokenValidationParameters { ValidateIssuerSigningKey = true, IssuerSigningKey = new SymmetricSecurityKey(key), ValidateIssuer = false, ValidateAudience = false };
+            });
 
         services.AddEndpointsApiExplorer();
         services.AddSwaggerGen();
@@ -35,6 +54,7 @@ public class Startup
 
         app.UseRouting();
 
+        app.UseAuthentication();
         app.UseAuthorization();
 
         app.UseEndpoints(endpoints =>
