@@ -1,0 +1,106 @@
+{
+	"info": {
+		"_postman_id": "facbd312-20e6-479f-b6d8-bc9a4c1ea0af",
+		"name": "RestAPI Works",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "9081660"
+	},
+	"item": [
+		{
+			"name": "Get Data",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "HsNsH@outlook.com",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "1q2w3E*",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:7146/WeatherForecast",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7146",
+					"path": [
+						"WeatherForecast"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Data JWT Token",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiaHNuc2hAb3V0bG9vay5jb20iLCJuYmYiOjE2Njg3MzAzNzUsImV4cCI6MTY2ODczNzU3NSwiaWF0IjoxNjY4NzMwMzc1fQ.P6rs7cfPB7RQwgUKDydvm5z8JyrwMc0b0RB7tj9sMxQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:7055/WeatherForecast",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7055",
+					"path": [
+						"WeatherForecast"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post AccessToken Generate",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"email\": \"hsnsh@outlook.com\",\n  \"pass\": \"1q2w3E*\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7055/api/Account/login",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7055",
+					"path": [
+						"api",
+						"Account",
+						"login"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
