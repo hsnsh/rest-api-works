@@ -48,7 +48,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiaHNuc2hAb3V0bG9vay5jb20iLCJuYmYiOjE2Njg3MzAzNzUsImV4cCI6MTY2ODczNzU3NSwiaWF0IjoxNjY4NzMwMzc1fQ.P6rs7cfPB7RQwgUKDydvm5z8JyrwMc0b0RB7tj9sMxQ",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyaWQiOiJhMDNjZjY1Yy1lZGZjLTRhMjMtOTBhOC0xMTJmZDk1N2ZhNWEiLCJuYW1lIjoiaHNuc2hAb3V0bG9vay5jb20iLCJnaXZlbl9uYW1lIjoiSGFzYW4iLCJmYW1pbHlfbmFtZSI6IlNBSElOIiwiZW1haWwiOiJoc25zaEBvdXRsb29rLmNvbSIsIm5iZiI6MTY2ODczOTU5NCwiZXhwIjoxNjY4NzQ2Nzk0LCJpYXQiOjE2Njg3Mzk1OTR9.6CTdH64g-J83NkMkVnGu9ljJA1iidvNLw5VUWEOy-UY",
 							"type": "string"
 						}
 					]
@@ -97,6 +97,39 @@
 						"api",
 						"Account",
 						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post AccessToken From Refresh",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"AccessToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyaWQiOiJhMDNjZjY1Yy1lZGZjLTRhMjMtOTBhOC0xMTJmZDk1N2ZhNWEiLCJuYW1lIjoiaHNuc2hAb3V0bG9vay5jb20iLCJnaXZlbl9uYW1lIjoiSGFzYW4iLCJmYW1pbHlfbmFtZSI6IlNBSElOIiwiZW1haWwiOiJoc25zaEBvdXRsb29rLmNvbSIsIm5iZiI6MTY2ODczOTUyMiwiZXhwIjoxNjY4NzQ2NzExLCJpYXQiOjE2Njg3Mzk1MjJ9.qFKlxQxBgGtqkXPMHrDdwHyh6qJZOfdhJFYw8b2xtW4\",\n  \"RefreshToken\": \"RfP1FqoDAsJ0EXdN+9xgLEDqrxm9yC9lkvnkiGXjsV0=\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7055/api/Account/refresh-token",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7055",
+					"path": [
+						"api",
+						"Account",
+						"refresh-token"
 					]
 				}
 			},
