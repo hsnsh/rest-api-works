@@ -1,0 +1,6 @@
+cd src/HsNsH.ApiWorks.DataApi 
+
+dotnet ef migrations add InitialCreate --context BookStoresDBContext -o Migrations
+dotnet ef database remove --context BookStoresDBContext
+dotnet ef database update --context BookStoresDBContext
+
